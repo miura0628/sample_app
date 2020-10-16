@@ -8,18 +8,19 @@
 </head>
 <body>
 <div>
-  <h1>サンプルページ</h1>
+  <h1>時給計算ページ</h1>
+  <%= form_with local: true do |f| %>
   <div>時給を入力してください</div>
   <div>
-    <%= text_field :job_price, class:"price-input", id:"job-price", placeholder:"例）790" %>
+    <%= f.text_field :job_price, class:"price-input", id:"job-price", placeholder:"例）790" %>
   </div>
-  <div>勤務時間を入力してください</div>
+  <div>1日の勤務時間を入力してください</div>
   <div>
-    <%= text_field :work_time, class:"time-input", id:"work-time", placeholder:"例）8" %>
+    <%= f.text_field :work_time, class:"time-input", id:"work-time", placeholder:"例）8" %>
   </div>
-    <div>出勤日数を入力してください</div>
+    <div>月の出勤回数を入力してください</div>
   <div>
-    <%= text_field :work_days, class:"work-input", id:"work-days", placeholder:"例）22" %>
+    <%= f.text_field :work_days, class:"work-input", id:"work-days", placeholder:"例）22" %>
   </div>
   <div class="prices-content">
     <div class="price-content">
@@ -41,6 +42,7 @@
       </span>
     </div>
   </div>
+  <% end %>
 </div>
 </body>
 </html>
